@@ -1,14 +1,15 @@
 {
 	"apiVersion": 2,
-	"name": "create-block/boilerplate",
-	"title": "Boilerplate",
-	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"name": "blocks-course/team-members",
+	"title": "Team Members",
+	"category": "media",
+	"icon": "admin-users",
+	"description": "A team members grid.",
+	"keywords": ["Team", "Members", "Grid"],
 	"supports": {
 		"html": false
 	},
-	"textdomain": "boilerplate",
+	"textdomain": "team-members",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"

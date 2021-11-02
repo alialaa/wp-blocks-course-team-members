@@ -3,7 +3,7 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 
-registerBlockType( 'create-block/boilerplate', {
+registerBlockType( 'blocks-course/team-members', {
 	edit: Edit,
 	save,
 } );
