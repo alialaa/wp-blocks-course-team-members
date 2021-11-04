@@ -12,5 +12,11 @@
 	"textdomain": "team-members",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
-	"style": "file:./build/style-index.css"
+	"style": "file:./build/style-index.css",
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 2
+		}
+	}
 }
