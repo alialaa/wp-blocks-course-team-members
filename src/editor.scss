@@ -1,9 +1,56 @@
-/**
- * The following styles get applied inside the editor only.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-blocks-course-team-members {
+	display: block;
 
-.wp-block-create-block-boilerplate {
-	border: 1px dotted #f03;
+	@for $i from 1 through 6 {
+		&.has-#{$i}-columns {
+			/* stylelint-disable-next-line selector-class-pattern */
+			> .block-editor-inner-blocks > .block-editor-block-list__layout > {
+
+				[data-type="blocks-course/team-member"] {
+					width: calc(100% / #{$i} - 20px);
+				}
+
+				.block-list-appender {
+					align-self: stretch;
+					width: calc(100% / #{$i} - 20px);
+					border: 1px dashed;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					min-height: 70px;
+				}
+			}
+		}
+	}
+	/* stylelint-disable-next-line selector-class-pattern */
+	> .block-editor-inner-blocks > .block-editor-block-list__layout {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -10px;
+		margin-right: -10px;
+
+		[data-type="blocks-course/team-member"] {
+			max-width: none;
+			margin: 0;
+		}
+
+		> [data-type="blocks-course/team-member"] {
+			margin: 10px;
+
+			h4 {
+				color: #222;
+				font-size: 22px;
+				font-size: bold;
+				margin: 0;
+			}
+
+			p {
+				color: #565656;
+				font-size: 16px;
+				font-weight: 300;
+				margin-bottom: 5px;
+				margin-top: 5px;
+			}
+		}
+	}
 }
