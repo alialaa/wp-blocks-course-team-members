@@ -1,12 +1,34 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+.wp-block-blocks-course-team-members {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -10px;
+	margin-right: -10px;
 
-.wp-block-create-block-boilerplate {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+	@for $i from 1 through 6 {
+		&.has-#{$i}-columns {
+
+			.wp-block-blocks-course-team-member {
+				width: calc(100% / #{$i} - 20px);
+			}
+		}
+	}
+
+	.wp-block-blocks-course-team-member {
+		margin: 10px;
+
+		h4 {
+			color: #222;
+			font-size: 22px;
+			font-size: bold;
+			margin: 0;
+		}
+
+		p {
+			color: #565656;
+			font-size: 16px;
+			font-weight: 300;
+			margin-bottom: 5px;
+			margin-top: 5px;
+		}
+	}
 }
