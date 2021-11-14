@@ -1,5 +1,7 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import { Icon } from '@wordpress/components';
+import { __ } from '@wordpress/i18n';
 
 export default function SortableItem( props ) {
 	const {
@@ -15,13 +17,21 @@ export default function SortableItem( props ) {
 		transition,
 	};
 	return (
-		<div
+		<li
 			ref={ setNodeRef }
 			style={ style }
 			{ ...attributes }
 			{ ...listeners }
+			className={
+				props.selectedLink === props.index ? 'is-selected' : null
+			}
 		>
-			Item { props.id }
-		</div>
+			<button
+				aria-label={ __( 'Edit Social Link', 'team-members' ) }
+				onClick={ () => props.setSelectedLink( props.index ) }
+			>
+				<Icon icon={ props.icon } />
+			</button>
+		</li>
 	);
 }
