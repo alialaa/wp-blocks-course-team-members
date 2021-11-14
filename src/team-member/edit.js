@@ -24,6 +24,17 @@ import {
 	TextControl,
 	Button,
 } from '@wordpress/components';
+import {
+	DndContext,
+	useSensor,
+	useSensors,
+	PointerSensor,
+} from '@dnd-kit/core';
+import {
+	SortableContext,
+	verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import SortableItem from './sortable-item';
 
 function Edit( {
 	attributes,
@@ -38,6 +49,8 @@ function Edit( {
 
 	const prevURL = usePrevious( url );
 	const prevIsSelected = usePrevious( isSelected );
+
+	const sensors = useSensors( useSensor( PointerSensor ) );
 
 	const titleRef = useRef();
 
@@ -130,6 +143,10 @@ function Edit( {
 			],
 		} );
 		setSelectedLink();
+	};
+
+	const handleDragEnd = ( event ) => {
+		console.log( event );
 	};
 
 	useEffect( () => {
@@ -243,6 +260,26 @@ function Edit( {
 
 				<div className="wp-block-blocks-course-team-member-social-links">
 					<ul>
+						<DndContext
+							sensors={ sensors }
+							onDragEnd={ handleDragEnd }
+						>
+							<SortableContext
+								items={ socialLinks.map(
+									( item ) => `${ item.icon }-${ item.link }`
+								) }
+								strategy={ verticalListSortingStrategy }
+							>
+								{ socialLinks.map( ( item ) => {
+									return (
+										<SortableItem
+											key={ `${ item.icon }-${ item.link }` }
+											id={ `${ item.icon }-${ item.link }` }
+										/>
+									);
+								} ) }
+							</SortableContext>
+						</DndContext>
 						{ socialLinks.map( ( item, index ) => {
 							return (
 								<li
