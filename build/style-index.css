@@ -44,5 +44,20 @@
   margin-bottom: 5px;
   margin-top: 5px;
 }
+.wp-block-blocks-course-team-members .wp-block-blocks-course-team-member .wp-block-blocks-course-team-member-social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px -5px 0;
+}
+.wp-block-blocks-course-team-members .wp-block-blocks-course-team-member .wp-block-blocks-course-team-member-social-links ul li {
+  display: inline-block;
+  margin: 5px;
+}
+.wp-block-blocks-course-team-members .wp-block-blocks-course-team-member .wp-block-blocks-course-team-member-social-links ul li a {
+  text-decoration: none;
+}
+.wp-block-blocks-course-team-members .wp-block-blocks-course-team-member .wp-block-blocks-course-team-member-social-links ul li span.dashicon {
+  color: #4e4e4e;
+}
 
 /*# sourceMappingURL=style-index.css.map*/
