@@ -21,6 +21,8 @@ import {
 	SelectControl,
 	Icon,
 	Tooltip,
+	TextControl,
+	Button,
 } from '@wordpress/components';
 
 function Edit( {
@@ -271,6 +273,16 @@ function Edit( {
 						) }
 					</ul>
 				</div>
+				{ selectedLink !== undefined && (
+					<div className="wp-block-blocks-course-team-member-link-form">
+						<TextControl label={ __( 'Icon', 'text-members' ) } />
+						<TextControl label={ __( 'URL', 'text-members' ) } />
+						<br />
+						<Button isDestructive>
+							{ __( 'Remove Link', 'text-members' ) }
+						</Button>
+					</div>
+				) }
 			</div>
 		</>
 	);
