@@ -4173,6 +4173,7 @@ __webpack_require__.r(__webpack_exports__);
 function Edit({
   attributes,
   setAttributes,
+  context,
   noticeOperations,
   noticeUI,
   isSelected
@@ -4393,7 +4394,7 @@ function Edit({
     allowedTypes: ['image'],
     disableMediaButtons: url,
     notices: noticeUI
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+  }), context['blocks-course/team-members-columns'], (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
     ref: titleRef,
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Member Name', 'team-member'),
     tagName: "h4",
@@ -4483,6 +4484,7 @@ __webpack_require__.r(__webpack_exports__);
     reusable: false,
     html: false
   },
+  usesContext: ['blocks-course/team-members-columns'],
   attributes: {
     name: {
       type: 'string',

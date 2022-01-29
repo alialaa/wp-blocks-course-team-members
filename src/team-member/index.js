@@ -12,6 +12,7 @@ registerBlockType( 'blocks-course/team-member', {
 		reusable: false,
 		html: false,
 	},
+	usesContext: [ 'blocks-course/team-members-columns' ],
 	attributes: {
 		name: {
 			type: 'string',

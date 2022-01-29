@@ -41,6 +41,7 @@ import SortableItem from './sortable-item';
 function Edit( {
 	attributes,
 	setAttributes,
+	context,
 	noticeOperations,
 	noticeUI,
 	isSelected,
@@ -260,6 +261,7 @@ function Edit( {
 					disableMediaButtons={ url }
 					notices={ noticeUI }
 				/>
+				{ context[ 'blocks-course/team-members-columns' ] }
 				<RichText
 					ref={ titleRef }
 					placeholder={ __( 'Member Name', 'team-member' ) }
